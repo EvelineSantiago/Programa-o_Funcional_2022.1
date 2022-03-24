@@ -1,1 +1,1 @@
-Repositório de atividades de programação funcional.
+Repositório de Atividades de Programação Funcional.
