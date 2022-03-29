@@ -1,0 +1,27 @@
+FUNÇÕES PURAS:
+  São funções que dado um parâmetro input sempre vão retornar o mesmo output sem causar side effects (efeitos colaterais).
+
+PARADIGMA IMPERATIVA:
+  É um paradigma de programação que descreve a computação como ações, enunciados ou comandos que mudam o estado (variáveis) de um programa. Este paradigma de programação
+se destaca pela simplicidade, uma vez que todo ser humano, ao se programar, o faz imperativamente, baseado na ideia de ações e estados, quase como um programa de computador.
+
+PARADIGMA ESTRUTURADO:
+   É um paradigma de programação da engenharia de softwares, com ênfase em sequência, decisão e interação(sub-rotinas,
+laços de repetição, condicionais e, estruturas em bloco), a PE predominou na escrita de software até a programação orientada à objetos(POO).
+
+PARADIGMA ORIENTADO OBJETO:
+   São projetados para implementar diretamente a abordagem OO na solução dos problemas. Essa abordagem tornou-se uma ferramenta importante
+para solucionar muitos tipos de problemas através de simulação.
+
+PARADIGMA DECLARATIVO:
+   Está programação dita que o programador deve modelar um dado problema através de assertivas acerca dos objetos do universo
+de discurso, ou seja, definindo o relacionamento lógico existente. Entre a cabeça e o corpo da cláusula, e nunca descrevendo como
+seus procedimentos funcionam.
+
+PARADIGMA FUNCIONAL:
+   É um paradigma de programção que trata a computação como uma avaliação de funções matemáticas e que evita estados ou dados mutáveis. 
+Ela enfatiza a aplicação de funções, em contraste da programação imperativa, que enfatiza mudanças no estado do programa.
+
+PARADIGMA LÓGICO:
+   É um paradigma de programação que faz uso lógica matemática, a primeira linguagem de programação lógica foi a Planner, a qual permitia
+a invocação orientada a padrões de planos procedimentais de asserções e de objetivos. 
