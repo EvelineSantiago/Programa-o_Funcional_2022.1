@@ -1,0 +1,1 @@
+unico x xs = if x == head xs then True else False
