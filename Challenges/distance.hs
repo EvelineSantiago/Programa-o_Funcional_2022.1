@@ -1,5 +1,5 @@
 import Data.List
-import Data.Maybe
+import Data.Maybe 
 
 -- retorna o subvetor incluindo o elemento posição índice e lim elementos a esquerda e a direita
 neib :: [a] -> Int -> Int -> [a]
@@ -26,7 +26,34 @@ getHoles xs = [i | i <- [0..length xs - 1], xs !! i == '.']
 set :: String -> Int -> Int -> String
 set xs index value = take index xs ++ [dig2char value] ++ drop (index + 1) xs
 
+-- tenta resolver o problema para essa posição
+-- se é possível resolver, retorna Just resposta, senão Nothing
+-- problema (xs, lim)
+-- holes: lista de posições a serem preenchidas
+-- hindex: posicao atual no vetor de holes
+solve :: (String, Int) -> [Int] -> Int -> Maybe String
+solve (xs, lim) holes hindex
+    | hindex == length holes = Just xs
+    | null testa' = Nothing
+    | otherwise = head testa'
+    where
+        pos = holes !! hindex
+        testa = [solve (set xs pos value, lim) holes (hindex + 1) | value <- [0..lim], fit (xs, lim) pos value]
+        testa' = [x | x <- testa, isJust x]
 
+
+-- prepara a entrada para a função recursiva de resolução
+mainSolver :: String -> Int -> String
+mainSolver xs lim = fromJust $ solve (xs, lim) (getHoles xs) 0
+
+
+main :: IO ()
+main = do
+    xs <- getLine
+    lim <- readLn :: IO Int
+    putStrLn $ mainSolver xs lim
+
+{--
 neibTest :: IO ()
 neibTest = do
     print $ neib "abcdef.." 0 2 == "abc"
@@ -57,6 +84,12 @@ getHolesTest :: IO ()
 getHolesTest = do
     print $ getHoles "12.3.." == [2,4,5]
     print $ getHoles "12.3.4" == [2,4]
-    print $ getHoles "...3.4" == [0,1,2,4]
+    print $ getHoles "...3.4" == [0,1,2,4]--}
 
- 
+mainTest :: IO ()
+mainTest = do
+    print $ mainSolver "01.2." 3 == "01320"
+    print $ mainSolver ".0..231..5" 5 == "1045231045"
+    print $ mainSolver "2..0..............3..........." 3 == "213021302130213021302130213021"
+    print $ mainSolver "0..32..41." 5 == "0413250413"
+    print $ mainSolver "9....7.620.5318....." 9 == "95318746209531874620"
